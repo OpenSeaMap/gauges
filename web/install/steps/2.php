@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `pegelstaende` (
 	}
 
 $result2 = $db->qry(" 
-CREATE TABLE IF NOT EXISTS `pegelstaende2` (
+CREATE TABLE IF NOT EXISTS ".TABLE_PEGEL2." (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `namegebiet` tinytext NOT NULL COMMENT 'Name Gebiet',
   `name` tinytext NOT NULL COMMENT 'Name',

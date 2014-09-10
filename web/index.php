@@ -12,6 +12,7 @@ Die Index Datei der Installation / Aktualisierung.
 //wenn datei existiert wird install durchgeführt sonst aktualisierung
 define('INSTALL', file_exists('./install/steps.inc.php'));
 include('config.inc.php');
+include('');
 
 if (INSTALL) {
 		

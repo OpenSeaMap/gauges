@@ -4,6 +4,11 @@
 Nun werden die Daten aus der XML-Datei in MySQL eingefuegt:<br><br>
 <!--<b>Bitte ans Ende der Seite Scrollen</b><br><br>-->
 <?php
+require(PATH_CLASSES.'log.class.php');
+require(PATH_CLASSES.'daten.class.php');
+
+$soapname=PATH_FILES."pegel_soap.xml";
+
 if (ob_get_level() == 0) {
     ob_start();
 }

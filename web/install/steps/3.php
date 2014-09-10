@@ -5,6 +5,7 @@ Nun werden die Daten von der SOAP Schnittstelle empfangen:<br><br>
 <?php
 //api datei
 require(PATH_CLASSES.'soap.class.php');
+require(PATH_CLASSES.'log.class.php');
 
 try {
 $clientApi = new SOAPClientApi();
@@ -13,7 +14,7 @@ $clientApi = new SOAPClientApi();
 $arrPegel = $clientApi->getPegelinformationen("WASSERSTAND ROHDATEN", NULL, NULL);
 
 //je nach system vorher datei anlegen und rechte zum schreiben geben
-$datei="pegel_soap.xml";
+$datei=PATH_FILES."pegel_soap.xml";
 
 $xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>";
 	if(!empty($arrPegel)){

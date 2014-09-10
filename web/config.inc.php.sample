@@ -1,0 +1,18 @@
+<?php
+
+define('MYSQL_HOST', 'sql.extern.smurf.noris.de');
+define('MYSQL_USER', 'osm_gauges');
+define('MYSQL_PW', 'nice try');
+define('MYSQL_DB', 'osm_gauges');
+define('TABLE_PEGEL2', 'pegelstaende2');
+
+define('PATH_CLASSES', '/srv/www/openseamap/gauges/web/classes/');
+define('PATH_FILES', '/srv/www/openseamap/gauges/temp/');
+define('PATH_LOG', '/srv/www/openseamap/gauges/temp/');
+
+include('classes/mysql.class.php');
+include('classes/util.class.php');
+global $db;
+$db = new MySQL();
+
+?>

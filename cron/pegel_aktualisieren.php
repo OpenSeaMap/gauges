@@ -7,9 +7,10 @@ Aufgabe der Datei:
 Daten mithilfe einer Lokalen XML-Datei aktualisieren, kann für die automatische Aktualisierung genutzt werden.
 */
 
-//vollständiger pfad zur config notwendig
-//muss angepasst werden
-include('/var/www/httpdocs/test/config.inc.php');
+include('config.inc.php');
+require(PATH_CLASSES.'daten.class.php');
+
+$xmlname=PATH_FILES."pegelstaende_neu.xml";
 //muss angepasst werden
 
 
