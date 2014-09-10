@@ -1,14 +1,14 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 11.05.11 12:15 Uhr
+letzte Ã„nderung 11.05.11 12:15 Uhr
 alle wichtigen Funktionen in einer hilfsklasse zusammengefasst
 */
 
 class Util {
 	
 	/*
-	 * Format für Datum und Zeitangaben
+	 * Format fÃ¼r Datum und Zeitangaben
 	 * (wie bei date()-Funktion)
 	 */
 	const DATETIME_FORMAT = 'd.m.y H:i';
@@ -134,7 +134,7 @@ class Util {
     /*
 	 * aus der php doku
 	 * in cases when "0" is not intended to be empty, here is a simple function to safely test for an empty string (or mixed variable)
-	 * da messwerte und pnp 0 sein können, dann aber nicht leer sind
+	 * da messwerte und pnp 0 sein kÃ¶nnen, dann aber nicht leer sind
 	 * @param $string
 	 * @retrun $string oder bool
      */		
@@ -179,9 +179,9 @@ class Util {
 	 * @param $datei
      */		
     public static function wget_datei($datei) {
-		//escapeshellarg — Maskiert eine Zeichenkette (String), um sie als Shell-Argument benutzen zu können
+		//escapeshellarg Â— Maskiert eine Zeichenkette (String), um sie als Shell-Argument benutzen zu kÃ¶nnen
 		$escape = escapeshellarg($datei);
-		//exec — Führt ein externes Programm aus
+		//exec Â— FÃ¼hrt ein externes Programm aus
 		exec("wget " . $escape);
 		return;
 	}
@@ -189,8 +189,8 @@ class Util {
 	/*
      * Wandelt DATE_W3C in ein "normales" Datum um
 	 * http://php.net/manual/en/class.datetime.php
-	 * Die if abfrage ist um kompatiblität mit php versionen kleiner 5.3 herzustellen,
-	 * allerdings so nur abwärtskompatibel bis 5.1
+	 * Die if abfrage ist um kompatiblitÃ¤t mit php versionen kleiner 5.3 herzustellen,
+	 * allerdings so nur abwÃ¤rtskompatibel bis 5.1
      * @param $datew3c
      * @return $date
      */
@@ -217,13 +217,19 @@ class Util {
      */
 	public static function convertUpperString($string){
 	//$string = ucfirst(strtolower($string));
-	$string = ucwords(strtolower($string));
+		$string = ucwords(strtolower($string));
+
+		// Umlaute: PHP ist dafÃ¼r zu blÃ¶d
+		$umlaute = array("Ã¤","Ã¶","Ã¼");
+		$replace = array("Ã„","Ã–","Ãœ");
+		$string = str_replace($umlaute, $replace, $string);
+
 		return $string;
 	}
 	
 	/*
      * Wandelt die Tendenz in Pfeile um
-	 * Idee von Markus Bärlocher
+	 * Idee von Markus BÃ¤rlocher
      * @param $tendenz
      * @return $tendenz
      */
@@ -249,8 +255,8 @@ class Util {
 	}
 
 	/*
-     * Wandelt die Tendenz in Pfeile um für OSM angepasst
-	 * Idee von Markus Bärlocher
+     * Wandelt die Tendenz in Pfeile um fÃ¼r OSM angepasst
+	 * Idee von Markus BÃ¤rlocher
      * @param $tendenz
      * @return $tendenz
      */
@@ -302,7 +308,7 @@ class Util {
 	}
 	
 	/*
-     * Stellt Informationen zu den Fehlern dar für OSM angepasst
+     * Stellt Informationen zu den Fehlern dar fÃ¼r OSM angepasst
      * @param $daten_fehler
      * @return $string
      */
@@ -327,32 +333,5 @@ class Util {
 		return $fehler;
 	}
 	
-	/*
-     * Liefert einen "fehlerfreien" String
-     * @param fstring - Name
-     * @return String - verbesserter Name
-     */
-    public static function getCleanString($string) {
-    	$umlaute = array("Ã–","Ã„","Ãœ");
-		$replace = array('&Auml;','&Ouml;','&Uuml;');
-		//Umlaute ersetzen
-		$string2 = str_replace($umlaute, $replace, $string);
-    	return $string2;
-    }
-	
-	/*
-     * Liefert einen "fehlerfreien" String für OSM angepasst
-	 * es werden direkt kleinbuchstaben eingesetzt da die php strtolower funktion die escaped zeichen ignoriert
-     * @param fstring - Name
-     * @return String - verbesserter Name
-     */
-    public static function getCleanString_osm($string) {
-    	$umlaute = array("Ã–","Ã„","Ãœ");
-		$replace = array('\u00E4','\u00F6','\u00FC');
-		//Umlaute ersetzen
-		$string2 = str_replace($umlaute, $replace, $string);
-    	return $string2;
-    }
-		
 }
 ?>

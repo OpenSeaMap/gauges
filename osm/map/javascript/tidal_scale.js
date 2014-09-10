@@ -22,7 +22,7 @@
  
 /*
 angepasst von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 24.05.11 12:02 Uhr
+letzte Ã„nderung 24.05.11 12:02 Uhr
 Aufgabe der Datei:
 Stellt die Marker auf OSM dar.
 */

@@ -1,13 +1,13 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 10.05.11 17:31 Uhr
+letzte Ã„nderung 10.05.11 17:31 Uhr
 Aufgabe der Datei:
 Abfrage der Informationen zur Anzeige der Marker auf der Karte.
 */
 header("Content-type: text/plain; charset=UTF-8");
 include('config.inc.php');
-//wichtig dies muss die erste zeile sein, echo in der config muss dafür deaktiviert werden
+//wichtig dies muss die erste zeile sein, echo in der config muss dafÃ¼r deaktiviert werden
 Map::write_header();
 
 /*
@@ -74,7 +74,7 @@ if ($bottom>$top)
 }
 */
 
-//immer 50 datensätze aus der db holen
+//immer 50 datensÃ¤tze aus der db holen
 $resultMap = $db->qry(" SELECT pegelnummer,pegelname,km,messwert,datum,uhrzeit,pnp,tendenz,namegebiet,name,daten_fehler,lat,lon FROM ".TABLE_PEGEL2." WHERE $left<lon AND lon<$right AND $bottom<lat AND lat<$top ORDER BY `pegelnummer` LIMIT 0, 50 ");
 		while($resMap = mysql_fetch_object($resultMap)) {
 		  Map::write_line($resMap);

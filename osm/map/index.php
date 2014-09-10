@@ -1,7 +1,7 @@
 <?php
 /*
 angepasst von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 10.05.11 16:02 Uhr
+letzte Ã„nderung 10.05.11 16:02 Uhr
 Aufgabe der Datei:
 Index Datei von OSM
 */
@@ -105,7 +105,7 @@ Index Datei von OSM
 				var format = document.getElementById("mapFormat").value;
 
 				if (format == "unknown") {
-					alert("Bitte wählen sie ein Format.");
+					alert("Bitte wÃ¤hlen sie ein Format.");
 					return;
 				} else if (format == "cal") {
 					format = "_png." + format

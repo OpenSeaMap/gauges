@@ -2,12 +2,12 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 13.05.11 12:20 Uhr
+letzte Ã„nderung 13.05.11 12:20 Uhr
 Aufgabe der Datei:
-Daten mithilfe einer Lokalen XML-Datei aktualisieren, kann für die automatische Aktualisierung genutzt werden.
+Daten mithilfe einer Lokalen XML-Datei aktualisieren, kann fÃ¼r die automatische Aktualisierung genutzt werden.
 */
 
-//vollständiger pfad zur config notwendig
+//vollstÃ¤ndiger pfad zur config notwendig
 //muss angepasst werden
 include('/var/www/httpdocs/test/config.inc.php');
 //muss angepasst werden

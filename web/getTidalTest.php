@@ -1,7 +1,7 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 10.05.11 17:45 Uhr
+letzte Ã„nderung 10.05.11 17:45 Uhr
 Aufgabe der Datei:
 Abfrage der Informationen zur Anzeige der Marker auf der Karte.
 */

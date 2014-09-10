@@ -1,7 +1,7 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 06.05.11 16:22 Uhr
+letzte Ã„nderung 06.05.11 16:22 Uhr
 Alle Transformationen in einer Klasse
 aufgeteilt auf verschiedene Funktionen
 Fuer Bessel- und Krassowsky-Ellipsoid immer verschiedene Funktionen benutzt
@@ -29,7 +29,7 @@ class Transformation {
 		$PI = pi();
 		$rho = 180 / $PI;
 		
-		// Konstanten für Bessel-Ellipsoid
+		// Konstanten fÃ¼r Bessel-Ellipsoid
 		$a = 6377397.155;
 		$b = 6356078.963;
 		
@@ -38,7 +38,7 @@ class Transformation {
 		//oder besser wird berechnet durch 
 		$e_strich_2 = (($a * $a) - ($b * $b)) / ($b * $b);
 		
-		//Polkrümmungshalbmesser / Polkrümmungsradius
+		//PolkrÃ¼mmungshalbmesser / PolkrÃ¼mmungsradius
 		//$c = 6398786.849;
 		//oder besser wird berechnet durch 
 		$c = ($a * $a)/$b;
@@ -73,9 +73,9 @@ class Transformation {
 		$lat = $breite;
 		$lon = $laenge;
 
-	//PHP hat immer nur einen Rückgabewert, deswegen geht dies nicht
+	//PHP hat immer nur einen RÃ¼ckgabewert, deswegen geht dies nicht
 	//return $lat,$lon; !!!
-	//ein array ist aber nur eine Rückgabe
+	//ein array ist aber nur eine RÃ¼ckgabe
 	//deswegen geht folgendes
 	return array($lat, $lon);
 		
@@ -97,10 +97,10 @@ class Transformation {
 		KONSTANZ
 		3513757.75 	5280398.00
 		9.18214		47.66178
-		BORKUM SÜDSTRAND
+		BORKUM SÃœDSTRAND
 		2543850.75	5938584.00
 		6.66142		53.57685
-		UECKERMÜNDE
+		UECKERMÃœNDE
 		5438544.50 	5958673.00
 		14.06624	53.75560
 
@@ -150,17 +150,17 @@ class Transformation {
 	public static function GK_geo_6point($hoch,$rechts) {
 	
 		/*
-		Punkte willkührlich gewählt
+		Punkte willkÃ¼hrlich gewÃ¤hlt
 		Breite und Laenge berechnet mit [BKG11]
 		Rechts		Hoch
 		Laenge 		Breite
-		KÖLN
+		KÃ–LN
 		3356914.43	5646606.45
 		6.96330		50.93695
 		SCHLESWIG
 		3536932.00	6042547.00
 		9.56916		54.51138
-		GLÜCKSTADT
+		GLÃœCKSTADT
 		3527058.00	5961553.00
 		9.40944		53.78437
 
@@ -202,7 +202,7 @@ class Transformation {
 	}
 	
 	   /*
-		* GK koordinaten in Geo. Koordinaten [GJ11, S.114] hier für Bessel-Ellipsoid
+		* GK koordinaten in Geo. Koordinaten [GJ11, S.114] hier fÃ¼r Bessel-Ellipsoid
 		* @param $hoch und $rechts (richtig formatiert, dies ist immer der fall, da die Daten passend in der DB abgelegt werden) $zone wird passend ausgelesen
 		* @return $lat und $lon
 		*/
@@ -229,7 +229,7 @@ class Transformation {
 		
 		//wichtige Terme
 		$y = $rw - ((($l0/3)+0.5) * pow(10, 6));
-		//Polkrümmungshalbmesser
+		//PolkrÃ¼mmungshalbmesser
 		$c = ($a * $a)/$b; 
 		//2. numerische Exzentrizitaet
 		$e_strich_2 = (($a * $a)-($b * $b))/($b * $b);
@@ -274,9 +274,9 @@ class Transformation {
 		//allerdings stammen die GK-Koordinaten so direkt von der Budesanstalt fuer Wasserbau,
 		//somit ist eine Ueberpruefung nicht notwendig, da an den Werten nichts geaendert werden kann
 
-	//PHP hat immer nur einen Rückgabewert, deswegen geht dies nicht
+	//PHP hat immer nur einen RÃ¼ckgabewert, deswegen geht dies nicht
 	//return $lat,$lon; !!!
-	//ein array ist aber nur eine Rückgabe
+	//ein array ist aber nur eine RÃ¼ckgabe
 	//deswegen geht folgendes
 	return array($lat, $lon);
 		
@@ -284,7 +284,7 @@ class Transformation {
 	
 	
 	   /*
-		* GK-Koordinaten in Geo. Koordinaten [GJ11, S.114] hier für Krassowsky-Ellipsoid
+		* GK-Koordinaten in Geo. Koordinaten [GJ11, S.114] hier fÃ¼r Krassowsky-Ellipsoid
 		* @param $hoch und $rechts (richtig formatiert, dies ist immer der fall, da die Daten passend in der DB abgelegt werden) $zone wird passend ausgelesen
 		* @return $lat und $lon
 		*/
@@ -311,7 +311,7 @@ class Transformation {
 		
 		//wichtige Terme
 		$y = $rw - ((($l0/3)+0.5) * pow(10, 6));
-		//Polkrümmungshalbmesser
+		//PolkrÃ¼mmungshalbmesser
 		$c = ($a * $a)/$b;
 		//2. numerische Exzentrizitaet
 		$e_strich_2 = (($a * $a)-($b * $b))/($b * $b);
@@ -357,9 +357,9 @@ class Transformation {
 		//somit ist eine Ueberpruefung nicht notwendig, da an den Werten nichts geaendert werden kann
 
 
-	//PHP hat immer nur einen Rückgabewert, deswegen geht dies nicht
+	//PHP hat immer nur einen RÃ¼ckgabewert, deswegen geht dies nicht
 	//return $lat,$lon; !!!
-	//ein array ist aber nur eine Rückgabe
+	//ein array ist aber nur eine RÃ¼ckgabe
 	//deswegen geht folgendes
 	return array($lat, $lon);
 		
@@ -371,7 +371,7 @@ class Transformation {
 		* @return $x und $y auf bessel
 		*/
 	public static function geo_bessel_kart($lat,$lon,$pnp) {
-		//Umwandlung nicht notwendig trägt aber zum verständnis bei
+		//Umwandlung nicht notwendig trÃ¤gt aber zum verstÃ¤ndnis bei
 		$breite = $lat;
 		$laenge = $lon;
 		
@@ -382,7 +382,7 @@ class Transformation {
 		//hoehe nicht gegeben daher 0 angenommen ...
 		//$h = 0;
 		//[Tor03, S. 291-293]
-		//höhe entspricht bezugspegel amsterdammer pegel 37 meter
+		//hÃ¶he entspricht bezugspegel amsterdammer pegel 37 meter
 		$h = 37;
 		//davon muss noch der pnp abgezogen bzw. addiert werden
 		$h = $h - $pnp;
@@ -404,9 +404,9 @@ class Transformation {
 		//$z = $n * $sin_b * (($b * $b) / ($a * $a)) + $h  * $sin_b
 		$z = (((1 - $e2) * $n) + $h ) * $sin_b;
 
-	//PHP hat immer nur einen Rückgabewert, deswegen geht dies nicht
+	//PHP hat immer nur einen RÃ¼ckgabewert, deswegen geht dies nicht
 	//return $x,$y,$z; !!!
-	//ein array ist aber nur eine Rückgabe
+	//ein array ist aber nur eine RÃ¼ckgabe
 	//deswegen geht folgendes
 	return array($x, $y, $z);
 		
@@ -418,7 +418,7 @@ class Transformation {
 		* @return $x und $y auf besserl
 		*/
 	public static function geo_krass_kart($lat,$lon,$pnp) {
-		//Umwandlung nicht notwendig trägt aber zum verständnis bei
+		//Umwandlung nicht notwendig trÃ¤gt aber zum verstÃ¤ndnis bei
 		$breite = $lat;
 		$laenge = $lon;
 		
@@ -428,7 +428,7 @@ class Transformation {
 		
 		//hoehe nicht gegeben daher 0 angenommen ...
 		//$h = 0;
-		//höhe entspricht bezugspegel kronstaedter pegel 16 meter niedriger als amsterdam 37-16 meter
+		//hÃ¶he entspricht bezugspegel kronstaedter pegel 16 meter niedriger als amsterdam 37-16 meter
 		//[Tor03, S. 291-293]
 		$h = 37-16;
 		//davon muss noch der pnp abgezogen bzw. addiert werden
@@ -451,9 +451,9 @@ class Transformation {
 		//$z = $n * $sin_b * (($b * $b) / ($a * $a)) + $h  * $sin_b
 		$z = (((1 - $e2) * $n) + $h ) * $sin_b;
 
-	//PHP hat immer nur einen Rückgabewert, deswegen geht dies nicht
+	//PHP hat immer nur einen RÃ¼ckgabewert, deswegen geht dies nicht
 	//return $x,$y,$z; !!!
-	//ein array ist aber nur eine Rückgabe
+	//ein array ist aber nur eine RÃ¼ckgabe
 	//deswegen geht folgendes
 	return array($x, $y, $z);
 		
@@ -488,9 +488,9 @@ class Transformation {
 		$y = ($y2 * $m) + 73.707;
 		$z = ($z2 * $m) + 418.197;
 
-	//PHP hat immer nur einen Rückgabewert, deswegen geht dies nicht
+	//PHP hat immer nur einen RÃ¼ckgabewert, deswegen geht dies nicht
 	//return $x,$y,$z; !!!
-	//ein array ist aber nur eine Rückgabe
+	//ein array ist aber nur eine RÃ¼ckgabe
 	//deswegen geht folgendes
 	return array($x, $y, $z);
 		
@@ -525,9 +525,9 @@ class Transformation {
 		$y = ($y2 * $m) - 126.4;
 		$z = ($z2 * $m) - 93.2;
 
-	//PHP hat immer nur einen Rückgabewert, deswegen geht dies nicht
+	//PHP hat immer nur einen RÃ¼ckgabewert, deswegen geht dies nicht
 	//return $x,$y,$z; !!!
-	//ein array ist aber nur eine Rückgabe
+	//ein array ist aber nur eine RÃ¼ckgabe
 	//deswegen geht folgendes
 	return array($x, $y, $z);
 		
@@ -572,9 +572,9 @@ class Transformation {
 		$lat = $breite * $rho;
 		$lon = $laenge * $rho;
 		
-	//PHP hat immer nur einen Rückgabewert, deswegen geht dies nicht
+	//PHP hat immer nur einen RÃ¼ckgabewert, deswegen geht dies nicht
 	//return $lat,$lon; !!!
-	//ein array ist aber nur eine Rückgabe
+	//ein array ist aber nur eine RÃ¼ckgabe
 	//deswegen geht folgendes
 	return array($lat, $lon);
 		

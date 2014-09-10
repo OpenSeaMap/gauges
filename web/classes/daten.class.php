@@ -1,7 +1,7 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 06.05.11 16:25 Uhr
+letzte Ã„nderung 06.05.11 16:25 Uhr
 alle wichtigen Funktionen die mit der Datenspeicherung in MySQL etwas zu tun haben,
 in einer Klasse zusammengefasst
 */
@@ -14,14 +14,14 @@ class Daten {
 
     /*
      * vergleich der verschiedenen Koordinaten-Transformationen
-	 * hat für die eigentliche Anwendung keine Funktion
+	 * hat fÃ¼r die eigentliche Anwendung keine Funktion
 	 * zum testen gedacht
      */
 public static function compare_coord() {
 
 		global $db;
 		
-	//geeignete Anzahl der Abfrage wählen hier 20
+	//geeignete Anzahl der Abfrage wÃ¤hlen hier 20
 	  $result20Pegel = $db->qry(" SELECT pegelnummer,Rechtswert_GK,Hochwert_GK,lat,lon FROM ".TABLE_PEGEL2." ORDER BY `pegelnummer` DESC LIMIT 0, 20 ");
 	  if ($result20Pegel){
 		echo 'erfolg verbindung und auswahl';
@@ -75,7 +75,7 @@ public static function set_coord_extern() {
 
 		global $db;
 		
-	  //geeignete anzahl der abfrage wählen hier ehr weniger 40-80 sollte okay sein
+	  //geeignete anzahl der abfrage wÃ¤hlen hier ehr weniger 40-80 sollte okay sein
 	  $result5Pegel = $db->qry(" SELECT pegelnummer,Rechtswert_GK,Hochwert_GK,lat,lon,daten_fehler FROM ".TABLE_PEGEL2." WHERE `lat` = '' AND `lon` = '' AND `Rechtswert_GK` != '0.00' AND `Hochwert_GK` != '0.00' ORDER BY `pegelnummer` DESC LIMIT 0, 40 ");
 	  if ($result5Pegel){
 		echo 'erfolg verbindung und auswahl';
@@ -139,7 +139,7 @@ public static function set_coord_formel() {
 
 		global $db;
 		
-	//geeignete Anzahl der Abfrage wählen, damit die Berechnungen in unter 30 sekunden erfolgen können, zwischen 500 und 1000 ist ein guter wert
+	//geeignete Anzahl der Abfrage wÃ¤hlen, damit die Berechnungen in unter 30 sekunden erfolgen kÃ¶nnen, zwischen 500 und 1000 ist ein guter wert
 	  $result5Pegel = $db->qry(" SELECT pegelnummer,Rechtswert_GK,Hochwert_GK,lat,lon,daten_fehler FROM ".TABLE_PEGEL2." WHERE `lat` = '' AND `lon` = '' AND `Rechtswert_GK` != '0.00' AND `Hochwert_GK` != '0.00' ORDER BY `pegelnummer` DESC LIMIT 0, 500 ");
 	  if ($result5Pegel){
 		echo 'erfolg verbindung und auswahl';
@@ -199,7 +199,7 @@ public static function set_coord_aehnlichkeit() {
 
 		global $db;
 		
-			//geeignete Anzahl der Abfrage wählen, damit die Berechnungen in unter 30 sekunden erfolgen können, 1500 - 3000 ist okay
+			//geeignete Anzahl der Abfrage wÃ¤hlen, damit die Berechnungen in unter 30 sekunden erfolgen kÃ¶nnen, 1500 - 3000 ist okay
 	  $result5Pegel = $db->qry(" SELECT pegelnummer,Rechtswert_GK,Hochwert_GK,lat,lon,daten_fehler FROM ".TABLE_PEGEL2." WHERE `lat` = '' AND `lon` = '' AND `Rechtswert_GK` != '0.00' AND `Hochwert_GK` != '0.00' ORDER BY `pegelnummer` DESC LIMIT 0, 1500 ");
 	  if ($result5Pegel){
 		echo 'erfolg verbindung und auswahl';
@@ -254,13 +254,13 @@ public static function set_coord_aehnlichkeit() {
     /*
 	 * hiermit werden die GK-Koordinaten in lat und lon umgerechnet mithilfe der Formeln [GJ11]
 	 * transformiert die Koordinaten nur, wenn vorher keine gesetzt sind
-	 * für Bessel-Ellipsoid
+	 * fÃ¼r Bessel-Ellipsoid
      */	
 public static function set_coord_bessel() {
 
 		global $db;
 		
-	//geeignete Anzahl der Abfrage wählen, damit die Berechnungen in unter 30 sekunden erfolgen können, zwischen 400 und 600 ist ein guter wert
+	//geeignete Anzahl der Abfrage wÃ¤hlen, damit die Berechnungen in unter 30 sekunden erfolgen kÃ¶nnen, zwischen 400 und 600 ist ein guter wert
 	  $result5Pegel = $db->qry(" SELECT pegelnummer,Rechtswert_GK,Hochwert_GK,lat,lon,streifenzone,ellipsoid,daten_fehler,pnp FROM ".TABLE_PEGEL2." WHERE `lat` = '' AND `lon` = '' AND `Rechtswert_GK` != '0.00' AND `Hochwert_GK` != '0.00' AND `ellipsoid` = 'Bessel 1841' ORDER BY `pegelnummer` DESC LIMIT 0, 450 ");
 	  if ($result5Pegel){
 		//echo 'erfolg verbindung und auswahl';
@@ -333,13 +333,13 @@ public static function set_coord_bessel() {
     /*
 	 * hiermit werden die GK-Koordinaten in lat und lon umgerechnet mithilfe der Formeln [GJ11]
 	 * transformiert die Koordinaten nur, wenn vorher keine gesetzt sind
-	 * für Krassowsky-Ellipsoid
+	 * fÃ¼r Krassowsky-Ellipsoid
      */	
 public static function set_coord_krass() {
 
 		global $db;
 		
-	//geeignete Anzahl der Abfrage wählen, damit die Berechnungen in unter 30 sekunden erfolgen können, zwischen 400 und 600 ist ein guter wert
+	//geeignete Anzahl der Abfrage wÃ¤hlen, damit die Berechnungen in unter 30 sekunden erfolgen kÃ¶nnen, zwischen 400 und 600 ist ein guter wert
 	  $result5Pegel = $db->qry(" SELECT pegelnummer,Rechtswert_GK,Hochwert_GK,lat,lon,streifenzone,ellipsoid,daten_fehler,pnp FROM ".TABLE_PEGEL2." WHERE `lat` = '' AND `lon` = '' AND `Rechtswert_GK` != '0.00' AND `Hochwert_GK` != '0.00' AND `ellipsoid` = 'Krassovski' ORDER BY `pegelnummer` DESC LIMIT 0, 450 ");
 	  if ($result5Pegel){
 		//echo 'erfolg verbindung und auswahl';
@@ -411,8 +411,8 @@ public static function set_coord_krass() {
 
 		
 	/**
-	 * Speichert die von SimpleXML übergebenen Objekte in der Datenbank
-	 * hier für das statische XML-Dokument
+	 * Speichert die von SimpleXML Ã¼bergebenen Objekte in der Datenbank
+	 * hier fÃ¼r das statische XML-Dokument
 	 * @param XML-Objekte
 	 */
 public static function save_update_xml($pegelnummer, $pegelname, $km, $messwert, $datum, $uhrzeit, $pnp, $tendenz) {
@@ -474,8 +474,8 @@ public static function save_update_xml($pegelnummer, $pegelname, $km, $messwert,
 		}
 		
 	/**
-	 * Speichert die von SimpleXML übergebenen Objekte in der Datenbank
-	 * hier für das aus der SOAP Response gewonnene XML-Dokument
+	 * Speichert die von SimpleXML Ã¼bergebenen Objekte in der Datenbank
+	 * hier fÃ¼r das aus der SOAP Response gewonnene XML-Dokument
 	 * @param XML-Objekte
 	 */
 public static function save_update_soap($pegelnummer, $pegelname, $km, $messwert, $datum, $uhrzeit, $pnp, $tendenz, $namegebiet, $name, $Rechtswert_GK, $Hochwert_GK, $streifenzone, $bezugssystem, $ellipsoid, $epsgCode) {
@@ -568,9 +568,9 @@ public static function save_update_soap($pegelnummer, $pegelname, $km, $messwert
 
 
 	/**
-	 * Speichert die von SimpleXML übergebenen Objekte in der Datenbank
-	 * hier für das statische XML-Dokument
-	 * Funktion angepasst, damit diese in einer shell benutzt werden kann und in dieser nicht unnötig viel Text steht
+	 * Speichert die von SimpleXML Ã¼bergebenen Objekte in der Datenbank
+	 * hier fÃ¼r das statische XML-Dokument
+	 * Funktion angepasst, damit diese in einer shell benutzt werden kann und in dieser nicht unnÃ¶tig viel Text steht
 	 * @param XML-Objekte
 	 */
 public static function save_update_xml_shell($pegelnummer, $pegelname, $km, $messwert, $datum, $uhrzeit, $pnp, $tendenz) {

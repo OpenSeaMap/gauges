@@ -1,6 +1,6 @@
 <!--
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 17.04.11 17:31 Uhr
+letzte Ã„nderung 17.04.11 17:31 Uhr
 Aufgabe der Datei:
 Die Abfrage der Informationen zur Anzeige der Marker auf der Karte werden in einer Datei gespeichert.
 -->
@@ -21,12 +21,9 @@ $txt = "lat	lon	title	description	icon	iconSize	iconOffset";
 	$resultMap = $db->qry(" SELECT pegelnummer,pegelname,km,messwert,datum,uhrzeit,pnp,tendenz,namegebiet,name,daten_fehler,lat,lon FROM ".TABLE_PEGEL2." WHERE lat !='' AND lon !='' ORDER BY `pegelnummer` LIMIT 0, 500 ");
 		while($resMap = mysql_fetch_object($resultMap)) {
 		
-	$name = Util::getCleanString($resMap->name);
-	$namegebiet = Util::getCleanString($resMap->namegebiet);
-	
 	//umwandlungen fuer die Anzeige
-	$name = Util::convertUpperString($name);
-	$namegebiet = Util::convertUpperString($namegebiet);
+	$name = Util::convertUpperString($resMap->name);
+	$namegebiet = Util::convertUpperString($resMap->namegebiet);
 	
 	$tendenz = Util::convertArrow($resMap->tendenz);
 	$daten_fehler = Util::show_daten_fehler($resMap->daten_fehler);

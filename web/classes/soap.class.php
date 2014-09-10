@@ -1,15 +1,15 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 20.04.11 14:05 Uhr
+letzte Ã„nderung 20.04.11 14:05 Uhr
 Aufgabe der Datei:
-Stellt eine für die Aufgabe passende SOAP API zur Verfügung
+Stellt eine fÃ¼r die Aufgabe passende SOAP API zur VerfÃ¼gung
 */
 
 // basiert auf der API die unter 
 // http://www.pegelonline.wsv.de/webservice/guideAkt gefunden werden kann
 // Author: Christian Seewald, EES GmbH, mail: c.seewald@ees-gmbh.de
-// es waren ein paar änderungen notwendig unter anderem um kompatiblität mit php 5.1 aufwärts herzustellen
+// es waren ein paar Ã¤nderungen notwendig unter anderem um kompatiblitÃ¤t mit php 5.1 aufwÃ¤rts herzustellen
 
 	class SOAPClientApi {
 	
@@ -105,7 +105,7 @@ Stellt eine für die Aufgabe passende SOAP API zur Verfügung
 		}
 		
 		/*
-		 * Modifiziert den Response und kompensiert damit die ungünstige 'auto-magic'
+		 * Modifiziert den Response und kompensiert damit die ungÃ¼nstige 'auto-magic'
 		 * Erstellung der Proxy-Objekte bei bestimmten Soap Responses durch Php Soap Extension 
 		 * (bei 0 und 1 Element(en) innerhalb eines Arrays im Soap Response)
 		 * 
@@ -119,7 +119,7 @@ Stellt eine für die Aufgabe passende SOAP API zur Verfügung
 				return array();
 			
 			//Soap Extension liefert kein array mit einem Element, wenn nur ein Element durch Webservice
-			//zurück gegeben wird
+			//zurÃ¼ck gegeben wird
 			} elseif (!is_array($response)) {
 				return array($response);
 

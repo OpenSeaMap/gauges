@@ -1,7 +1,7 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 19.05.11 17:52 Uhr
+letzte Ã„nderung 19.05.11 17:52 Uhr
 Aufgabe der Datei:
 Die Index Datei der Installation / Aktualisierung.
 */
@@ -9,13 +9,13 @@ Die Index Datei der Installation / Aktualisierung.
 //Ladeanzeige aus php.net doku entnommen
 //http://de3.php.net/manual/de/function.flush.php
 
-//wenn datei existiert wird install durchgeführt sonst aktualisierung
+//wenn datei existiert wird install durchgefÃ¼hrt sonst aktualisierung
 define('INSTALL', file_exists('./install/steps.inc.php'));
 include('config.inc.php');
 
 if (INSTALL) {
 		
-		//array mit allen schritten, weitere können leicht hinzugefügt werden
+		//array mit allen schritten, weitere kÃ¶nnen leicht hinzugefÃ¼gt werden
 		require_once('install/steps.inc.php');
 		if (isset($_REQUEST['step'])) {
 			//sicherstellen das int, deswegen wenn notwendig umwandlung
@@ -26,7 +26,7 @@ if (INSTALL) {
 			}
 		}
 		else {
-			//schritt gleich 1 so könnte man den installer immer wieder von vorne nach hinter durchgehen
+			//schritt gleich 1 so kÃ¶nnte man den installer immer wieder von vorne nach hinter durchgehen
 			$step = 1;
 		}
 		//einen schritt weiter
@@ -93,7 +93,7 @@ if (INSTALL) {
 </html>
 
 <?php
-//Install Check else könnte man auch mit einem if not install machen
+//Install Check else kÃ¶nnte man auch mit einem if not install machen
  } else
  { ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">

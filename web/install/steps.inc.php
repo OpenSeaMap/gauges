@@ -1,10 +1,10 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 13.05.11 18:54 Uhr
+letzte Ã„nderung 13.05.11 18:54 Uhr
 Aufgabe der Datei:
-Enthält die einzelnen für die Installation notwendigen Schritte,
-zu denen entsprechende Dateien im Ordner Steps vorhanden sein müssen.
+EnthÃ¤lt die einzelnen fÃ¼r die Installation notwendigen Schritte,
+zu denen entsprechende Dateien im Ordner Steps vorhanden sein mÃ¼ssen.
 */
 $steps = array(
 	1 => 'Willkommen',

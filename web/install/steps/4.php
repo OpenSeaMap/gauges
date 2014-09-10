@@ -93,7 +93,7 @@ $temp = 0;
 */
 	$temp = $temp + 1;
 echo '<div class="percents">' . $temp . ' Daten&nbsp;verarbeitet</div>';
-//einzelne werte an klasse übergeben
+//einzelne werte an klasse Ã¼bergeben
 Daten::save_update_soap($pegelnummer = $item->pegelnummer, $pegelname = $item->pegelname, $km = $item->km, $messwert = $item->messwert, $datum = $item->datum, $uhrzeit = $item->uhrzeit, $pnp = $item->pnp, $tendenz = $item->tendenz, $namegebiet = $item->namegebiet, $name = $item->name, $Rechtswert_GK = $item->rechtswert, $Hochwert_GK = $item->hochwert, $streifenzone = $item->streifenzone, $bezugssystem = $item->bezugssystem, $ellipsoid = $item->ellipsoid, $epsgCode = $item->epsgCode);
             }
 		}

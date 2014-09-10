@@ -1,7 +1,7 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 11.05.11 12:15 Uhr
+letzte Ã„nderung 11.05.11 12:15 Uhr
 erzeugt die notwendigen Marker auf der Karte
 */
 
@@ -12,7 +12,7 @@ class Map {
     
     /*
      * Schreibt den notwendigen Header
-	 * kann zusammen mit write_line in fast jeder Karte die OpenLayers unterstützt genutzt werden
+	 * kann zusammen mit write_line in fast jeder Karte die OpenLayers unterstÃ¼tzt genutzt werden
      */
     public static function write_header()
 	{
@@ -22,7 +22,7 @@ class Map {
 	
     /*
      * Schreibt einen Eintrag in einer Zeile
-	 * kann zusammen mit write_header in fast jeder Karte die OpenLayers unterstützt genutzt werden
+	 * kann zusammen mit write_header in fast jeder Karte die OpenLayers unterstÃ¼tzt genutzt werden
 	 * @param $mysqlresult
      */
 	//mit $resMap aufrufen
@@ -45,14 +45,9 @@ class Map {
 	//  title
 	print("<nobr>".$row->pegelname."</nobr>\t");
 	
-	
-	//"Problem mit UTF-8 umgehen"
-	$name = Util::getCleanString($row->name);
-	$namegebiet = Util::getCleanString($row->namegebiet);
-	
 	//umwandlungen fuer die Anzeige
-	$name = Util::convertUpperString($name);
-	$namegebiet = Util::convertUpperString($namegebiet);
+	$name = Util::convertUpperString($row->name);
+	$namegebiet = Util::convertUpperString($row->namegebiet);
 	
 	$tendenz = Util::convertArrow($row->tendenz);
 	$daten_fehler = Util::show_daten_fehler($row->daten_fehler);
@@ -76,13 +71,9 @@ class Map {
 	public static function write_line_osm($row)
 	{
 	
-	//"Problem mit UTF-8 umgehen"
-	$name = Util::getCleanString_osm($row->name);
-	$namegebiet = Util::getCleanString_osm($row->namegebiet);
-	
 	//umwandlungen fuer die Anzeige muss umgeschrieben werden
-	$name = Util::convertUpperString($name);
-	$namegebiet = Util::convertUpperString($namegebiet);
+	$name = Util::convertUpperString($row->name);
+	$namegebiet = Util::convertUpperString($row->namegebiet);
 	
 	$tendenz = Util::convertArrow_osm($row->tendenz);
 	$daten_fehler = Util::show_daten_fehler_osm($row->daten_fehler);

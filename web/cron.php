@@ -1,7 +1,7 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 19.05.11 18:58 Uhr
+letzte Ã„nderung 19.05.11 18:58 Uhr
 Aufgabe der Datei:
 Datei zur Aktualisierung, kann per Cron aufgerufen werden.
 */

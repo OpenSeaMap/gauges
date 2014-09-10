@@ -1,9 +1,9 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 15.05.11 15:02 Uhr
+letzte Ã„nderung 15.05.11 15:02 Uhr
 Aufgabe der Datei:
-Stellt die MySQL Funktionalität bereit.
+Stellt die MySQL FunktionalitÃ¤t bereit.
 */
 
 class MySQL {
@@ -45,9 +45,9 @@ class MySQL {
 	}
 	
     /*
-     * Führt ein sql query aus, wenn diese Anfrage falsch ist wird eine Fehlermeldung ausgegeben
+     * FÃ¼hrt ein sql query aus, wenn diese Anfrage falsch ist wird eine Fehlermeldung ausgegeben
 	 * und diese in ein log File geschrieben
-	 * @param qry - der auszuführende string
+	 * @param qry - der auszufÃ¼hrende string
 	 * @param debug = false - wenn TRUE, wird der query string angezeigt(echo)
 	 * @return das mysql result 
      */
@@ -86,7 +86,7 @@ class MySQL {
 	}
 	
 	/*
-	 * Gibt die Anzahl der betroffenen Zeilen der letzten Abfrage zurück
+	 * Gibt die Anzahl der betroffenen Zeilen der letzten Abfrage zurÃ¼ck
 	 * @return int - Anzahl betroffener Zeilen
 	 */
 	public function affectedRows() {
@@ -102,7 +102,7 @@ class MySQL {
 	}
 	
 	/*
-	 * Liefert die Anzahl der bis zu diesem Zeitpunkt ausgeführten Datenbankabfragen
+	 * Liefert die Anzahl der bis zu diesem Zeitpunkt ausgefÃ¼hrten Datenbankabfragen
 	 * @return int - Anzahl Abfragen
 	 */
 	public function getQueryCount() {
@@ -110,7 +110,7 @@ class MySQL {
 	}
 	
 	/*
-	 * Liefert die Summe der Dauer der bisher ausgeführten Abfragen
+	 * Liefert die Summe der Dauer der bisher ausgefÃ¼hrten Abfragen
 	 * @return int - Abfrage Zeit
 	 */
 	public function getQueryTimeSum() {

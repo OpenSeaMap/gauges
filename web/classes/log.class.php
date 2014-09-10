@@ -1,7 +1,7 @@
 <?php
 /*
 erstellt von Tim Reinartz im Rahmen der Bachelor-Thesis
-letzte Änderung 18.04.11 16:02 Uhr
+letzte Ã„nderung 18.04.11 16:02 Uhr
 Aufgabe der Datei:
 Fehler- und Erfolgsmeldungen in einer Datei speichern.
 */
