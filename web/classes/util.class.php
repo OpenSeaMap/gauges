@@ -220,8 +220,8 @@ class Util {
 		$string = ucwords(strtolower($string));
 
 		// Umlaute: PHP ist dafür zu blöd
-		$umlaute = array("ä","ö","ü");
-		$replace = array("Ä","Ö","Ü");
+		$umlaute = array("Ä","Ö","Ü");
+		$replace = array("ä","ö","ü");
 		$string = str_replace($umlaute, $replace, $string);
 
 		return $string;
