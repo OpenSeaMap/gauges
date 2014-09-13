@@ -8,7 +8,7 @@ Daten mithilfe einer Lokalen XML-Datei aktualisieren, kann für die automatische
 */
 
 include('config.inc.php');
-require(PATH_CLASSES.'daten.class.php');
+require_once(PATH_CLASSES.'daten.class.php');
 
 $xmlname=PATH_FILES."pegelstaende_neu.xml";
 //muss angepasst werden

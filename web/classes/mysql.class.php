@@ -6,7 +6,7 @@ Aufgabe der Datei:
 Stellt die MySQL Funktionalität bereit.
 */
 
-require(PATH_CLASSES.'log.class.php');
+require_once(PATH_CLASSES.'log.class.php');
 
 class MySQL {
 

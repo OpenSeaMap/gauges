@@ -6,8 +6,8 @@ alle wichtigen Funktionen die mit der Datenspeicherung in MySQL etwas zu tun hab
 in einer Klasse zusammengefasst
 */
 
-require(PATH_CLASSES.'log.class.php');
-require(PATH_CLASSES.'transformation.class.php');
+require_once(PATH_CLASSES.'log.class.php');
+require_once(PATH_CLASSES.'transformation.class.php');
 
 class Daten {
 	

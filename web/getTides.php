@@ -8,7 +8,7 @@ Abfrage der Informationen zur Anzeige der Marker auf der Karte.
 header("Content-type: text/plain; charset=UTF-8");
 include('config.inc.php');
 
-require(PATH_CLASSES.'map.class.php');
+require_once(PATH_CLASSES.'map.class.php');
 
 	
 /*
