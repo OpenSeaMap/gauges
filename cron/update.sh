@@ -1,5 +1,5 @@
 #!/bin/bash -e
-cd $(pwd $0)/..
+cd $(dirname $0)/..
 
 file="temp/pegelstaende_neu.xml"
 
